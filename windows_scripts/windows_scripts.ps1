@@ -1201,7 +1201,10 @@ function MapDrives {
     $Share2 = '\\matt-nas.miller.lan\matthew_versions'
     $Share3 = '\\matt-nas.miller.lan\vm_backup'
     # Mount Network Shares
-    New-PSDrive -Name "N" -PSProvider "FileSystem" -Root "$Share1" -Persist -Scope "Global"
-    New-PSDrive -Name "O" -PSProvider "FileSystem" -Root "$Share2" -Persist -Scope "Global"
-    New-PSDrive -Name "P" -PSProvider "FileSystem" -Root "$Share3" -Persist -Scope "Global"
+    New-SmbMapping -LocalPath 'N:' -RemotePath "$Share1" -Persistent $True
+    New-SmbMapping -LocalPath 'O:' -RemotePath "$Share2" -Persistent $True
+    New-SmbMapping -LocalPath 'P:' -RemotePath "$Share3" -Persistent $True
+    # Resarter explorer
+    taskkill /IM "explorer.exe" /F
+    Start-Process "explorer.exe"
 }
