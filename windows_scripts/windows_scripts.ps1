@@ -63,8 +63,8 @@ function ConfigureFirewallBase {
 
     # Configure profiles
     function FirewallDomainProfile {
-        New-ItemProperty -Path $DomainProfile -Name AllowLocalPolicyMerge -Value "0" -PropertyType DWORD -Force | Out-Null
-        New-ItemProperty -Path $DomainProfile -Name AllowLocalIPsecPolicyMerge -Value "0" -PropertyType DWORD -Force | Out-Null
+        New-ItemProperty -Path $DomainProfile -Name AllowLocalPolicyMerge -Value "1" -PropertyType DWORD -Force | Out-Null
+        New-ItemProperty -Path $DomainProfile -Name AllowLocalIPsecPolicyMerge -Value "1" -PropertyType DWORD -Force | Out-Null
         New-ItemProperty -Path $DomainProfile -Name DefaultInboundAction -Value "1" -PropertyType DWORD -Force | Out-Null
         New-ItemProperty -Path $DomainProfile -Name DefaultOutboundAction -Value "0" -PropertyType DWORD -Force | Out-Null
         New-ItemProperty -Path $DomainProfile -Name DisableNotifications -Value "0" -PropertyType DWORD -Force | Out-Null
@@ -83,8 +83,8 @@ function ConfigureFirewallBase {
     }
 
     function FirewallPrivateProfile {
-        New-ItemProperty -Path $PrivateProfile -Name AllowLocalPolicyMerge -Value "0" -PropertyType DWORD -Force | Out-Null
-        New-ItemProperty -Path $PrivateProfile -Name AllowLocalIPsecPolicyMerge -Value "0" -PropertyType DWORD -Force | Out-Null
+        New-ItemProperty -Path $PrivateProfile -Name AllowLocalPolicyMerge -Value "1" -PropertyType DWORD -Force | Out-Null
+        New-ItemProperty -Path $PrivateProfile -Name AllowLocalIPsecPolicyMerge -Value "1" -PropertyType DWORD -Force | Out-Null
         New-ItemProperty -Path $PrivateProfile -Name DefaultInboundAction -Value "1" -PropertyType DWORD -Force | Out-Null
         New-ItemProperty -Path $PrivateProfile -Name DefaultOutboundAction -Value "0" -PropertyType DWORD -Force | Out-Null
         New-ItemProperty -Path $PrivateProfile -Name DisableNotifications -Value "0" -PropertyType DWORD -Force | Out-Null
@@ -103,8 +103,8 @@ function ConfigureFirewallBase {
     }
 
     function FirewallPublicProfile {
-        New-ItemProperty -Path $PublicProfile -Name AllowLocalPolicyMerge -Value "0" -PropertyType DWORD -Force | Out-Null
-        New-ItemProperty -Path $PublicProfile -Name AllowLocalIPsecPolicyMerge -Value "0" -PropertyType DWORD -Force | Out-Null
+        New-ItemProperty -Path $PublicProfile -Name AllowLocalPolicyMerge -Value "1" -PropertyType DWORD -Force | Out-Null
+        New-ItemProperty -Path $PublicProfile -Name AllowLocalIPsecPolicyMerge -Value "1" -PropertyType DWORD -Force | Out-Null
         New-ItemProperty -Path $PublicProfile -Name DefaultInboundAction -Value "1" -PropertyType DWORD -Force | Out-Null
         New-ItemProperty -Path $PublicProfile -Name DefaultOutboundAction -Value "0" -PropertyType DWORD -Force | Out-Null
         New-ItemProperty -Path $PublicProfile -Name DisableNotifications -Value "0" -PropertyType DWORD -Force | Out-Null
