@@ -1186,6 +1186,9 @@ function InstallFeatures {
     Enable-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Hyper-V' -All
     # Enable WSL
     Enable-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Windows-Subsystem-Linux'
+    Enable-WindowsOptionalFeature -Online -FeatureName 'VirtualMachinePlatform'
+    # Set defaul WSL version to 2
+    wsl --set-default-version 2
 }
 
 function RemoveFeatures {
