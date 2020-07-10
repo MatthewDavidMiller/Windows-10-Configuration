@@ -302,6 +302,8 @@ function ConfigureFirewallCoreNetworking {
 }
 
 function RemoveApplications {
+    # Supress progress bar
+    $ProgressPreference = 'SilentlyContinue'
     # Applications base name
     $AppBase = "Microsoft."
     # Applications to remove
@@ -335,34 +337,34 @@ function RemoveApplications {
     $AppWallet = "Wallet"
 
     # Removes the applications
-    Get-AppxPackage -name "$($AppBase)$($AppBingWeather)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppStickyNotes)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppZuneVideo)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppZuneMusic)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppMaps)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppFeedbackHub)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppCommunications)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppCamera)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppAlarms)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppSkype)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppPrint3D)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppPeople)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppOneConnect)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppOfficeSway)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppNetworkSpeedTest)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppSolitaire)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppOfficeHub)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($App3DViewer)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppMessaging)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppGetStarted)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppGetHelp)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppXboxOneSmartGlass)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppNews)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppYourPhone)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppMixedReality)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppScreenSketch)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppOfficeOnenote)" | Remove-AppxPackage
-    Get-AppxPackage -name "$($AppBase)$($AppWallet)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppBingWeather)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppStickyNotes)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppZuneVideo)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppZuneMusic)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppMaps)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppFeedbackHub)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppCommunications)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppCamera)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppAlarms)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppSkype)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppPrint3D)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppPeople)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppOneConnect)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppOfficeSway)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppNetworkSpeedTest)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppSolitaire)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppOfficeHub)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($App3DViewer)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppMessaging)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppGetStarted)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppGetHelp)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppXboxOneSmartGlass)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppNews)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppYourPhone)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppMixedReality)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppScreenSketch)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppOfficeOnenote)" | Remove-AppxPackage
+    Get-AppxPackage -Name "$($AppBase)$($AppWallet)" | Remove-AppxPackage
 
     # Uninstall Onedrive
     if (Test-Path "$env:systemroot\System32\OneDriveSetup.exe") {
@@ -1182,16 +1184,22 @@ function ConfigurePowerOptions {
 }
 
 function InstallFeatures {
+    # Suppress progress bar
+    $ProgressPreference = 'SilentlyContinue'
     # Enable Hyper-V
     Enable-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Hyper-V' -All
     # Enable WSL
     Enable-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Windows-Subsystem-Linux'
     Enable-WindowsOptionalFeature -Online -FeatureName 'VirtualMachinePlatform'
+    # Reload PATH
+    $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
     # Set defaul WSL version to 2
     wsl --set-default-version 2
 }
 
 function RemoveFeatures {
+    # Suppress progress bar
+    $ProgressPreference = 'SilentlyContinue'
     # Disable internet explorer
     Disable-WindowsOptionalFeature -Online -FeatureName 'Internet-Explorer-Optional-amd64'
     # Disable powershell 2.0
