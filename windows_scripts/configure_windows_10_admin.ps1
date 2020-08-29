@@ -9,10 +9,9 @@ Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-
 . "$PSScriptRoot\windows_scripts.ps1"
 
 function InteractiveMenu1 {
-    function Show-Menu
-    {
+    function Show-Menu {
         param (
-        [string]$Title = 'Configuration Options 1'
+            [string]$Title = 'Configuration Options 1'
         )
         Clear-Host
         Write-Host "================ $Title ================"
@@ -26,47 +25,39 @@ function InteractiveMenu1 {
         Write-Host "q: Press 'q' to quit."
     }
     do {
-    Show-Menu
-    $selection = Read-Host "Select an option"
-    switch ($selection)
-     {
-        '1'
-        {
-            ConfigureComputerName
+        Show-Menu
+        $selection = Read-Host "Select an option"
+        switch ($selection) {
+            '1' {
+                ConfigureComputerName
+            }
+            '2' {
+                ConfigurePowerOptions
+            }
+            '3' {
+                DisableCortana
+            }
+            '4' {
+                DisableTelemetry
+            }
+            '5' {
+                ConfigureFirewallBase
+                ConfigureFirewallCoreNetworking
+                ConfigureFirewallNetworkDiscovery
+            }
+            '6' {
+                RemoveApplications
+            }
         }
-        '2'
-        {
-            ConfigurePowerOptions
-        }
-        '3'
-        {
-            DisableCortana
-        }
-        '4'
-        {
-            DisableTelemetry
-        }
-        '5'
-        {
-            ConfigureFirewallBase
-            ConfigureFirewallCoreNetworking
-            ConfigureFirewallNetworkDiscovery
-        }
-        '6'
-        {
-            RemoveApplications
-        }
-     }
-     pause
+        Pause
     }
     until ($selection -eq 'q')
 }
 
 function InteractiveMenu2 {
-    function Show-Menu
-    {
+    function Show-Menu {
         param (
-        [string]$Title = 'Configuration Options 2'
+            [string]$Title = 'Configuration Options 2'
         )
         Clear-Host
         Write-Host "================ $Title ================"
@@ -79,32 +70,26 @@ function InteractiveMenu2 {
         Write-Host "q: Press 'q' to quit."
     }
     do {
-    Show-Menu
-    $selection = Read-Host "Select an option"
-    switch ($selection)
-     {
-        '1'
-        {
-            ConfigureAppPrivacy
+        Show-Menu
+        $selection = Read-Host "Select an option"
+        switch ($selection) {
+            '1' {
+                ConfigureAppPrivacy
+            }
+            '2' {
+                ConfigureNTP
+            }
+            '3' {
+                InstallFeatures
+            }
+            '4' {
+                RemoveFeatures
+            }
+            '5' {
+                InstallApplications
+            }
         }
-        '2'
-        {
-            ConfigureNTP
-        }
-        '3'
-        {
-            InstallFeatures
-        }
-         '4'
-        {
-            RemoveFeatures
-        }
-         '5'
-        {
-            InstallApplications
-        }
-     }
-     pause
+        Pause
     }
     until ($selection -eq 'q')
 }

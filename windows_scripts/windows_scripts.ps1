@@ -497,457 +497,388 @@ windows.immersivecontrolpanel_cw5n1h2txyewy
 function InstallApplications {
 
     function ApplicationsMenu1 {
-    function Show-Menu
-    {
-        param (
-        [string]$Title = 'Install Options 1'
-        )
-        Clear-Host
-        Write-Host "================ $Title ================"
+        function Show-Menu {
+            param (
+                [string]$Title = 'Install Options 1'
+            )
+            Clear-Host
+            Write-Host "================ $Title ================"
 
-        Write-Host "1: Press '1' to Install Chocolatey."
-        Write-Host "2: Press '2' to Install ShellCheck."
-        Write-Host "3: Press '3' to Install Notepad++."
-        Write-Host "4: Press '4' to Install 7Zip."
-        Write-Host "5: Press '5' to Install Nmap."
-        Write-Host "6: Press '6' to Install QBittorent."
-        Write-Host "q: Press 'q' to quit."
+            Write-Host "1: Press '1' to Install Chocolatey."
+            Write-Host "2: Press '2' to Install ShellCheck."
+            Write-Host "3: Press '3' to Install Notepad++."
+            Write-Host "4: Press '4' to Install 7Zip."
+            Write-Host "5: Press '5' to Install Nmap."
+            Write-Host "6: Press '6' to Install QBittorent."
+            Write-Host "q: Press 'q' to quit."
+        }
+        do {
+            Show-Menu
+            $selection = Read-Host "Select an option"
+            switch ($selection) {
+                '1' {
+                    InstallChocolatey
+                }
+                '2' {
+                    InstallShellCheck
+                }
+                '3' {
+                    InstallNotepadPlusPlus
+                }
+                '4' {
+                    Install7Zip
+                }
+                '5' {
+                    InstallNMap
+                }
+                '6' {
+                    InstallQBittorent
+                }
+            }
+            Pause
+        }
+        until ($selection -eq 'q')
     }
-    do {
-    Show-Menu
-    $selection = Read-Host "Select an option"
-    switch ($selection)
-     {
-        '1'
-        {
-            InstallChocolatey
-        }
-        '2'
-        {
-            InstallShellCheck
-        }
-        '3'
-        {
-            InstallNotepadPlusPlus
-        }
-        '4'
-        {
-            Install7Zip
-        }
-        '5'
-        {
-            InstallNMap
-        }
-        '6'
-        {
-            InstallQBittorent
-        }
-     }
-     pause
-    }
-    until ($selection -eq 'q')
-}
 
-function ApplicationsMenu2 {
-    function Show-Menu
-    {
-        param (
-        [string]$Title = 'Install Options 2'
-        )
-        Clear-Host
-        Write-Host "================ $Title ================"
+    function ApplicationsMenu2 {
+        function Show-Menu {
+            param (
+                [string]$Title = 'Install Options 2'
+            )
+            Clear-Host
+            Write-Host "================ $Title ================"
 
-        Write-Host "1: Press '1' to Install Rufus."
-        Write-Host "2: Press '2' to Install Etcher."
-        Write-Host "3: Press '3' to Install Gimp."
-        Write-Host "4: Press '4' to Install Git."
-        Write-Host "5: Press '5' to Install Vlc."
-        Write-Host "6: Press '6' to Install Blender."
-        Write-Host "q: Press 'q' to quit."
+            Write-Host "1: Press '1' to Install Rufus."
+            Write-Host "2: Press '2' to Install Etcher."
+            Write-Host "3: Press '3' to Install Gimp."
+            Write-Host "4: Press '4' to Install Git."
+            Write-Host "5: Press '5' to Install Vlc."
+            Write-Host "6: Press '6' to Install Blender."
+            Write-Host "q: Press 'q' to quit."
+        }
+        do {
+            Show-Menu
+            $selection = Read-Host "Select an option"
+            switch ($selection) {
+                '1' {
+                    InstallRufus
+                }
+                '2' {
+                    InstallEtcher
+                }
+                '3' {
+                    InstallGimp
+                }
+                '4' {
+                    InstallGit
+                }
+                '5' {
+                    InstallVlc
+                }
+                '6' {
+                    InstallBlender
+                }
+            }
+            Pause
+        }
+        until ($selection -eq 'q')
     }
-    do {
-    Show-Menu
-    $selection = Read-Host "Select an option"
-    switch ($selection)
-     {
-        '1'
-        {
-            InstallRufus
-        }
-        '2'
-        {
-            InstallEtcher
-        }
-        '3'
-        {
-            InstallGimp
-        }
-        '4'
-        {
-            InstallGit
-        }
-        '5'
-        {
-            InstallVlc
-        }
-        '6'
-        {
-            InstallBlender
-        }
-     }
-     pause
-    }
-    until ($selection -eq 'q')
-}
 
-function ApplicationsMenu3 {
-    function Show-Menu
-    {
-        param (
-        [string]$Title = 'Install Options 3'
-        )
-        Clear-Host
-        Write-Host "================ $Title ================"
+    function ApplicationsMenu3 {
+        function Show-Menu {
+            param (
+                [string]$Title = 'Install Options 3'
+            )
+            Clear-Host
+            Write-Host "================ $Title ================"
 
-        Write-Host "1: Press '1' to Install Bitwarden."
-        Write-Host "2: Press '2' to Install WinSCP."
-        Write-Host "3: Press '3' to Install Putty."
-        Write-Host "4: Press '4' to Install Python."
-        Write-Host "5: Press '5' to Install Libreoffice."
-        Write-Host "6: Press '6' to Install Java."
-        Write-Host "q: Press 'q' to quit."
+            Write-Host "1: Press '1' to Install Bitwarden."
+            Write-Host "2: Press '2' to Install WinSCP."
+            Write-Host "3: Press '3' to Install Putty."
+            Write-Host "4: Press '4' to Install Python."
+            Write-Host "5: Press '5' to Install Libreoffice."
+            Write-Host "6: Press '6' to Install Java."
+            Write-Host "q: Press 'q' to quit."
+        }
+        do {
+            Show-Menu
+            $selection = Read-Host "Select an option"
+            switch ($selection) {
+                '1' {
+                    InstallBitwarden
+                }
+                '2' {
+                    InstallWinSCP
+                }
+                '3' {
+                    InstallPutty
+                }
+                '4' {
+                    InstallPython
+                }
+                '5' {
+                    InstallLibreoffice
+                }
+                '6' {
+                    InstallJava
+                }
+            }
+            Pause
+        }
+        until ($selection -eq 'q')
     }
-    do {
-    Show-Menu
-    $selection = Read-Host "Select an option"
-    switch ($selection)
-     {
-        '1'
-        {
-            InstallBitwarden
-        }
-        '2'
-        {
-            InstallWinSCP
-        }
-        '3'
-        {
-            InstallPutty
-        }
-        '4'
-        {
-            InstallPython
-        }
-        '5'
-        {
-            InstallLibreoffice
-        }
-        '6'
-        {
-            InstallJava
-        }
-     }
-     pause
-    }
-    until ($selection -eq 'q')
-}
 
-function ApplicationsMenu4 {
-    function Show-Menu
-    {
-        param (
-        [string]$Title = 'Install Options 4'
-        )
-        Clear-Host
-        Write-Host "================ $Title ================"
+    function ApplicationsMenu4 {
+        function Show-Menu {
+            param (
+                [string]$Title = 'Install Options 4'
+            )
+            Clear-Host
+            Write-Host "================ $Title ================"
 
-        Write-Host "1: Press '1' to Install Sysinternals."
-        Write-Host "2: Press '2' to Install VSCode."
-        Write-Host "3: Press '3' to Install Wireshark."
-        Write-Host "4: Press '4' to Install OpenJDK."
-        Write-Host "5: Press '5' to Install Tiny Nvidia Updater."
-        Write-Host "6: Press '6' to Install Firefox."
-        Write-Host "q: Press 'q' to quit."
+            Write-Host "1: Press '1' to Install Sysinternals."
+            Write-Host "2: Press '2' to Install VSCode."
+            Write-Host "3: Press '3' to Install Wireshark."
+            Write-Host "4: Press '4' to Install OpenJDK."
+            Write-Host "5: Press '5' to Install Tiny Nvidia Updater."
+            Write-Host "6: Press '6' to Install Firefox."
+            Write-Host "q: Press 'q' to quit."
+        }
+        do {
+            Show-Menu
+            $selection = Read-Host "Select an option"
+            switch ($selection) {
+                '1' {
+                    InstallSysinternals
+                }
+                '2' {
+                    InstallVSCode
+                }
+                '3' {
+                    InstallWireshark
+                }
+                '4' {
+                    InstallOpenJDK
+                }
+                '5' {
+                    InstallTinyNvidiaUpdater
+                }
+                '6' {
+                    InstallFirefox
+                }
+            }
+            Pause
+        }
+        until ($selection -eq 'q')
     }
-    do {
-    Show-Menu
-    $selection = Read-Host "Select an option"
-    switch ($selection)
-     {
-        '1'
-        {
-            InstallSysinternals
-        }
-        '2'
-        {
-            InstallVSCode
-        }
-        '3'
-        {
-            InstallWireshark
-        }
-        '4'
-        {
-            InstallOpenJDK
-        }
-        '5'
-        {
-            InstallTinyNvidiaUpdater
-        }
-        '6'
-        {
-            InstallFirefox
-        }
-     }
-     pause
-    }
-    until ($selection -eq 'q')
-}
 
-function ApplicationsMenu5 {
-    function Show-Menu
-    {
-        param (
-        [string]$Title = 'Install Options 5'
-        )
-        Clear-Host
-        Write-Host "================ $Title ================"
+    function ApplicationsMenu5 {
+        function Show-Menu {
+            param (
+                [string]$Title = 'Install Options 5'
+            )
+            Clear-Host
+            Write-Host "================ $Title ================"
 
-        Write-Host "1: Press '1' to Install Chrome."
-        Write-Host "2: Press '2' to Install Edge."
-        Write-Host "3: Press '3' to Install Freefilesync."
-        Write-Host "4: Press '4' to Install Vmware Player."
-        Write-Host "5: Press '5' to Install Nvidia Profile Inspector."
-        Write-Host "6: Press '6' to Install Steam."
-        Write-Host "q: Press 'q' to quit."
+            Write-Host "1: Press '1' to Install Chrome."
+            Write-Host "2: Press '2' to Install Edge."
+            Write-Host "3: Press '3' to Install Freefilesync."
+            Write-Host "4: Press '4' to Install Vmware Player."
+            Write-Host "5: Press '5' to Install Nvidia Profile Inspector."
+            Write-Host "6: Press '6' to Install Steam."
+            Write-Host "q: Press 'q' to quit."
+        }
+        do {
+            Show-Menu
+            $selection = Read-Host "Select an option"
+            switch ($selection) {
+                '1' {
+                    InstallChrome
+                }
+                '2' {
+                    InstallEdge
+                }
+                '3' {
+                    InstallFreeFileSync
+                }
+                '4' {
+                    InstallVmwarePlayer
+                }
+                '5' {
+                    InstallNvidiaProfileInspector
+                }
+                '6' {
+                    InstallSteam
+                }
+            }
+            Pause
+        }
+        until ($selection -eq 'q')
     }
-    do {
-    Show-Menu
-    $selection = Read-Host "Select an option"
-    switch ($selection)
-     {
-        '1'
-        {
-            InstallChrome
-        }
-        '2'
-        {
-            InstallEdge
-        }
-        '3'
-        {
-            InstallFreeFileSync
-        }
-        '4'
-        {
-            InstallVmwarePlayer
-        }
-        '5'
-        {
-            InstallNvidiaProfileInspector
-        }
-        '6'
-        {
-            InstallSteam
-        }
-     }
-     pause
-    }
-    until ($selection -eq 'q')
-}
 
-function ApplicationsMenu6 {
-    function Show-Menu
-    {
-        param (
-        [string]$Title = 'Install Options 6'
-        )
-        Clear-Host
-        Write-Host "================ $Title ================"
+    function ApplicationsMenu6 {
+        function Show-Menu {
+            param (
+                [string]$Title = 'Install Options 6'
+            )
+            Clear-Host
+            Write-Host "================ $Title ================"
 
-        Write-Host "1: Press '1' to Install Origin."
-        Write-Host "2: Press '2' to Install GOG."
-        Write-Host "3: Press '3' to Install Epic Store."
-        Write-Host "4: Press '4' to Install Bethesda Launcher."
-        Write-Host "5: Press '5' to Install Borderless Gaming."
-        Write-Host "6: Press '6' to Install Discord."
-        Write-Host "q: Press 'q' to quit."
+            Write-Host "1: Press '1' to Install Origin."
+            Write-Host "2: Press '2' to Install GOG."
+            Write-Host "3: Press '3' to Install Epic Store."
+            Write-Host "4: Press '4' to Install Bethesda Launcher."
+            Write-Host "5: Press '5' to Install Borderless Gaming."
+            Write-Host "6: Press '6' to Install Discord."
+            Write-Host "q: Press 'q' to quit."
+        }
+        do {
+            Show-Menu
+            $selection = Read-Host "Select an option"
+            switch ($selection) {
+                '1' {
+                    InstallOrigin
+                }
+                '2' {
+                    InstallGOG
+                }
+                '3' {
+                    InstallEpicStore
+                }
+                '4' {
+                    InstallBethesdaLauncher
+                }
+                '5' {
+                    InstallBorderlessGaming
+                }
+                '6' {
+                    InstallDiscord
+                }
+            }
+            Pause
+        }
+        until ($selection -eq 'q')
     }
-    do {
-    Show-Menu
-    $selection = Read-Host "Select an option"
-    switch ($selection)
-     {
-        '1'
-        {
-            InstallOrigin
-        }
-        '2'
-        {
-            InstallGOG
-        }
-        '3'
-        {
-            InstallEpicStore
-        }
-        '4'
-        {
-            InstallBethesdaLauncher
-        }
-        '5'
-        {
-            InstallBorderlessGaming
-        }
-        '6'
-        {
-            InstallDiscord
-        }
-     }
-     pause
-    }
-    until ($selection -eq 'q')
-}
 
-function ApplicationsMenu7 {
-    function Show-Menu
-    {
-        param (
-        [string]$Title = 'Install Options 7'
-        )
-        Clear-Host
-        Write-Host "================ $Title ================"
+    function ApplicationsMenu7 {
+        function Show-Menu {
+            param (
+                [string]$Title = 'Install Options 7'
+            )
+            Clear-Host
+            Write-Host "================ $Title ================"
 
-        Write-Host "1: Press '1' to Install Fedora Media Writer."
-        Write-Host "2: Press '2' to Install Visual Studio Community."
-        Write-Host "3: Press '3' to Install OpenVPN."
-        Write-Host "4: Press '4' to Install Twitch."
-        Write-Host "5: Press '5' to Install Vortex."
-        Write-Host "6: Press '6' to Install Visual Redistributables."
-        Write-Host "q: Press 'q' to quit."
+            Write-Host "1: Press '1' to Install Fedora Media Writer."
+            Write-Host "2: Press '2' to Install Visual Studio Community."
+            Write-Host "3: Press '3' to Install OpenVPN."
+            Write-Host "4: Press '4' to Install Twitch."
+            Write-Host "5: Press '5' to Install Vortex."
+            Write-Host "6: Press '6' to Install Visual Redistributables."
+            Write-Host "q: Press 'q' to quit."
+        }
+        do {
+            Show-Menu
+            $selection = Read-Host "Select an option"
+            switch ($selection) {
+                '1' {
+                    InstallFedoraMediaWriter
+                }
+                '2' {
+                    InstallVisualStudioCommunity
+                }
+                '3' {
+                    InstallOpenVPN
+                }
+                '4' {
+                    InstallTwitch
+                }
+                '5' {
+                    InstallVortex
+                }
+                '6' {
+                    InstallVisualRedistributables
+                }
+            }
+            Pause
+        }
+        until ($selection -eq 'q')
     }
-    do {
-    Show-Menu
-    $selection = Read-Host "Select an option"
-    switch ($selection)
-     {
-        '1'
-        {
-            InstallFedoraMediaWriter
-        }
-        '2'
-        {
-            InstallVisualStudioCommunity
-        }
-        '3'
-        {
-            InstallOpenVPN
-        }
-        '4'
-        {
-            InstallTwitch
-        }
-        '5'
-        {
-            InstallVortex
-        }
-        '6'
-        {
-            InstallVisualRedistributables
-        }
-     }
-     pause
-    }
-    until ($selection -eq 'q')
-}
 
-function ApplicationsMenu8 {
-    function Show-Menu
-    {
-        param (
-        [string]$Title = 'Install Options 8'
-        )
-        Clear-Host
-        Write-Host "================ $Title ================"
+    function ApplicationsMenu8 {
+        function Show-Menu {
+            param (
+                [string]$Title = 'Install Options 8'
+            )
+            Clear-Host
+            Write-Host "================ $Title ================"
 
-        Write-Host "1: Press '1' to Install Rockstar Launcher."
-        Write-Host "2: Press '2' to Install Rpgmaker RTP."
-        Write-Host "3: Press '3' to Install Golang."
-        Write-Host "4: Press '4' to Install Reolink."
-        Write-Host "5: Press '5' to Install Uplay."
-        Write-Host "6: Press '6' to Install Microsoft Office."
-        Write-Host "q: Press 'q' to quit."
+            Write-Host "1: Press '1' to Install Rockstar Launcher."
+            Write-Host "2: Press '2' to Install Rpgmaker RTP."
+            Write-Host "3: Press '3' to Install Golang."
+            Write-Host "4: Press '4' to Install Reolink."
+            Write-Host "5: Press '5' to Install Uplay."
+            Write-Host "6: Press '6' to Install Microsoft Office."
+            Write-Host "q: Press 'q' to quit."
+        }
+        do {
+            Show-Menu
+            $selection = Read-Host "Select an option"
+            switch ($selection) {
+                '1' {
+                    InstallRockstarLauncher
+                }
+                '2' {
+                    InstallRPGMakerRTPs
+                }
+                '3' {
+                    InstallGolang
+                }
+                '4' {
+                    InstallReolink
+                }
+                '5' {
+                    InstallUplay
+                }
+                '6' {
+                    InstallMicrosoftOffice
+                }
+            }
+            Pause
+        }
+        until ($selection -eq 'q')
     }
-    do {
-    Show-Menu
-    $selection = Read-Host "Select an option"
-    switch ($selection)
-     {
-        '1'
-        {
-            InstallRockstarLauncher
-        }
-        '2'
-        {
-            InstallRPGMakerRTPs
-        }
-        '3'
-        {
-            InstallGolang
-        }
-        '4'
-        {
-            InstallReolink
-        }
-        '5'
-        {
-            InstallUplay
-        }
-        '6'
-        {
-            InstallMicrosoftOffice
-        }
-     }
-     pause
-    }
-    until ($selection -eq 'q')
-}
 
-function ApplicationsMenu9 {
-    function Show-Menu
-    {
-        param (
-        [string]$Title = 'Install Options 9'
-        )
-        Clear-Host
-        Write-Host "================ $Title ================"
+    function ApplicationsMenu9 {
+        function Show-Menu {
+            param (
+                [string]$Title = 'Install Options 9'
+            )
+            Clear-Host
+            Write-Host "================ $Title ================"
 
-        Write-Host "1: Press '1' to Install Locale Emulator."
-        Write-Host "2: Press '2' to Install Wireguard."
-        Write-Host "3: Press '3' to Install Windows Store Apps."
-        Write-Host "q: Press 'q' to quit."
+            Write-Host "1: Press '1' to Install Locale Emulator."
+            Write-Host "2: Press '2' to Install Wireguard."
+            Write-Host "3: Press '3' to Install Windows Store Apps."
+            Write-Host "q: Press 'q' to quit."
+        }
+        do {
+            Show-Menu
+            $selection = Read-Host "Select an option"
+            switch ($selection) {
+                '1' {
+                    InstallLocaleEmulator
+                }
+                '2' {
+                    InstallWireguard
+                }
+                '3' {
+                    InstallWindowsStoreApps
+                }
+            }
+            Pause
+        }
+        until ($selection -eq 'q')
     }
-    do {
-    Show-Menu
-    $selection = Read-Host "Select an option"
-    switch ($selection)
-     {
-        '1'
-        {
-            InstallLocaleEmulator
-        }
-        '2'
-        {
-            InstallWireguard
-        }
-        '3'
-        {
-            InstallWindowsStoreApps
-        }
-     }
-     pause
-    }
-    until ($selection -eq 'q')
-}
 
     function InstallChocolatey {
         Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
