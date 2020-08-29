@@ -859,6 +859,7 @@ function InstallApplications {
             Write-Host "1: Press '1' to Install Locale Emulator."
             Write-Host "2: Press '2' to Install Wireguard."
             Write-Host "3: Press '3' to Install Windows Store Apps."
+            Write-Host "4: Press '4' to Install Zoom Meetings."
             Write-Host "q: Press 'q' to quit."
         }
         do {
@@ -873,6 +874,9 @@ function InstallApplications {
                 }
                 '3' {
                     InstallWindowsStoreApps
+                }
+                '4' {
+                    InstallZoom
                 }
             }
             Pause
@@ -1453,6 +1457,17 @@ function InstallApplications {
         Start-Process 'ms-windows-store://pdp'
         Read-Host 'Press enter when finished installing windows store apps '
     }
+
+    function InstallZoom {
+        Invoke-WebRequest 'https://zoom.us/client/latest/ZoomInstaller.exe' -OutFile "$HOME\Downloads\ZoomInstaller.exe"
+        if (Get-AuthenticodeSignature -FilePath "$HOME\Downloads\ZoomInstaller.exe" | Where-Object { $_.Status -eq "Valid" }) {
+            Start-Process -FilePath "$HOME\Downloads\ZoomInstaller.exe" -Wait
+        }
+        else {
+            Read-Host "Signature is not valid, application will not be installed"
+        }
+    }
+
     # To Update all installed choclatey packages use command:
     # choco upgrade all
 
