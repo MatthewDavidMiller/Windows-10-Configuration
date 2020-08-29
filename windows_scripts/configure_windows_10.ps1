@@ -8,5 +8,29 @@ Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-
 # Source Functions
 . "$PSScriptRoot\windows_scripts.ps1"
 
-# Prompts
-$MapDrivesVar = Read-Host 'Map network drives? y/n '
+function InteractiveMenu1 {
+    function Show-Menu {
+        param (
+            [string]$Title = 'Configuration Options 1'
+        )
+        Clear-Host
+        Write-Host "================ $Title ================"
+
+        Write-Host "1: Press '1' to map network drives."
+        Write-Host "q: Press 'q' to quit."
+    }
+    do {
+        Show-Menu
+        $selection = Read-Host "Select an option"
+        switch ($selection) {
+            '1' {
+                MapDrives
+            }
+        }
+        Pause
+    }
+    until ($selection -eq 'q')
+}
+
+# Call functions
+InteractiveMenu1
