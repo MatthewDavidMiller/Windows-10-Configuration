@@ -88,6 +88,9 @@ function InteractiveMenu2 {
             '5' {
                 InstallApplications
             }
+            '6' {
+                EnableControlledFolderAccess
+            }
         }
         Pause
     }

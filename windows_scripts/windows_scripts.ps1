@@ -383,6 +383,9 @@ windows.immersivecontrolpanel_cw5n1h2txyewy
 "@
 
     function ConfigureAppPrivacyRegistry {
+
+        # Value of 1 is force allow all by default. Value of 2 is force block all by default. Value of 3 is let user control it.
+
         # Prevent apps from accessing account info
         New-ItemProperty -Path $AppPrivacy -Name LetAppsAccessAccountInfo -Value "2" -PropertyType DWORD -Force | Out-Null
         New-ItemProperty -Path $AppPrivacy -Name LetAppsAccessAccountInfo_ForceAllowTheseApps -PropertyType MultiString -Force | Out-Null
@@ -1577,4 +1580,21 @@ function MapDrives {
     # Resarter explorer
     taskkill /IM "explorer.exe" /F
     Start-Process "explorer.exe"
+}
+
+function EnableControlledFolderAccess {
+    $ControlledFolderAccess = "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\Controlled Folder Access"
+
+    function EnableControlledFolderAccess2 {
+    # Enable block mode on controlled folder access
+    New-ItemProperty -Path $ControlledFolderAccess -Name EnableControlledFolderAccess -Value "1" -PropertyType DWORD -Force | Out-Null
+    }
+
+    if (!(Test-Path $ControlledFolderAccess)) {
+        New-Item -Path $ControlledFolderAccess -Force | Out-Null
+        EnableControlledFolderAccess2
+    }
+    else {
+        EnableControlledFolderAccess2
+    }
 }
