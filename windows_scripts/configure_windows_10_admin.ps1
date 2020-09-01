@@ -67,6 +67,7 @@ function InteractiveMenu2 {
         Write-Host "3: Press '3' to install features."
         Write-Host "4: Press '4' to remove some default features."
         Write-Host "5: Press '5' to install applications."
+        Write-Host "6: Press '6' to enable controlled folder access."
         Write-Host "q: Press 'q' to quit."
     }
     do {
