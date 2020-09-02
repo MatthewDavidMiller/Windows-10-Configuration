@@ -1583,18 +1583,47 @@ function MapDrives {
 }
 
 function EnableControlledFolderAccess {
-    $ControlledFolderAccess = "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\Controlled Folder Access"
+    # Enable controlled folder access
+    Set-MpPreference -EnableControlledFolderAccess Enabled
 
-    function EnableControlledFolderAccess2 {
-    # Enable block mode on controlled folder access
-    New-ItemProperty -Path $ControlledFolderAccess -Name EnableControlledFolderAccess -Value "1" -PropertyType DWORD -Force | Out-Null
+    function ControlledFolderAccessMenu {
+        function Show-Menu {
+            param (
+                [string]$Title = 'Controlled Folder Access Options'
+            )
+            Clear-Host
+            Write-Host "================ $Title ================"
+
+            Write-Host "1: Press '1' to add an allowed application."
+            Write-Host "2: Press '2' to add a protected folder."
+            Write-Host "q: Press 'q' to quit."
+        }
+        do {
+            Show-Menu
+            $selection = Read-Host "Select an option"
+            switch ($selection) {
+                '1' {
+                    AddAllowedApplication
+                }
+                '2' {
+                    AddProtectedFolder
+                }
+            }
+            Pause
+        }
+        until ($selection -eq 'q')
     }
 
-    if (!(Test-Path $ControlledFolderAccess)) {
-        New-Item -Path $ControlledFolderAccess -Force | Out-Null
-        EnableControlledFolderAccess2
+    function AddAllowedApplication {
+        $ApplicationLocation = Read-Host "Specify application full path. Can use a wildcard (*) to specify an entire folder."
+        Add-MpPreference -ControlledFolderAccessAllowedApplications $ApplicationLocation
     }
-    else {
-        EnableControlledFolderAccess2
+
+    function AddProtectedFolder {
+        $ProtectedFolderLocation = Read-Host "Specify protected folder full path."
+        Add-MpPreference -ControlledFolderAccessProtectedFolders $ProtectedFolderLocation
     }
+
+    # Call functions
+    ControlledFolderAccessMenu
 }
