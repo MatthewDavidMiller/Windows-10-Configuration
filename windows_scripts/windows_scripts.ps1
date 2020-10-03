@@ -1627,3 +1627,22 @@ function EnableControlledFolderAccess {
     # Call functions
     ControlledFolderAccessMenu
 }
+
+function DisableLLMNR {
+    # DNS client registry folder
+    $DNSClient = "Registry::HKEY_LOCAL_MACHINE\Software\policies\Microsoft\Windows NT\DNSClient"
+
+    function DisableLLMNR2 {
+        # Set NTP server domain
+        New-ItemProperty -Path $DNSClient -Name EnableMulticast -Value '0' -PropertyType DWORD -Force | Out-Null
+        }
+
+    # Configure NTP parameters
+    if (!(Test-Path $DNSClient)) {
+        New-Item -Path $DNSClient -Force | Out-Null
+        DisableLLMNR2
+    }
+    else {
+        DisableLLMNR2
+    }
+}

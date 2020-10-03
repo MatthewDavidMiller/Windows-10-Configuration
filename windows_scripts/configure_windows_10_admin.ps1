@@ -22,6 +22,7 @@ function InteractiveMenu1 {
         Write-Host "4: Press '4' to disable telemetry."
         Write-Host "5: Press '5' to configure firewall."
         Write-Host "6: Press '6' to remove some default applications."
+        Write-Host "7: Press '7' to disable LLMNR."
         Write-Host "q: Press 'q' to quit."
     }
     do {
@@ -47,6 +48,9 @@ function InteractiveMenu1 {
             }
             '6' {
                 RemoveApplications
+            }
+            '7' {
+                DisableLLMNR
             }
         }
         Pause
