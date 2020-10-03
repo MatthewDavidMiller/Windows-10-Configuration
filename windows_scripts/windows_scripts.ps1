@@ -1628,6 +1628,7 @@ function EnableControlledFolderAccess {
     ControlledFolderAccessMenu
 }
 
+# Refer to https://www.blackhillsinfosec.com/how-to-disable-llmnr-why-you-want-to/
 function DisableLLMNR {
     # DNS client registry folder
     $DNSClient = "Registry::HKEY_LOCAL_MACHINE\Software\policies\Microsoft\Windows NT\DNSClient"
@@ -1645,4 +1646,16 @@ function DisableLLMNR {
     else {
         DisableLLMNR2
     }
+}
+
+# Refer to http://blog.dbsnet.fr/disable-netbios-with-powershell
+function DisableNetbios {
+ # Interfaces registry folder
+    $Netbios = "Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\services\NetBT\Parameters\Interfaces"
+
+    # Disable Netbios
+        Get-ChildItem $Netbios |
+        foreach {
+        New-ItemProperty -Path $Netbios -Name NetbiosOptions -Value '2' -PropertyType DWORD -Force | Out-Null
+        }
 }

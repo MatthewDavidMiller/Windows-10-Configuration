@@ -23,6 +23,7 @@ function InteractiveMenu1 {
         Write-Host "5: Press '5' to configure firewall."
         Write-Host "6: Press '6' to remove some default applications."
         Write-Host "7: Press '7' to disable LLMNR."
+        Write-Host "8: Press '8' to disable Netbios."
         Write-Host "q: Press 'q' to quit."
     }
     do {
@@ -51,6 +52,9 @@ function InteractiveMenu1 {
             }
             '7' {
                 DisableLLMNR
+            }
+            '8' {
+                DisableNetbios
             }
         }
         Pause
