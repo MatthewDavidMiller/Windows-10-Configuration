@@ -1656,6 +1656,6 @@ function DisableNetbios {
     # Disable Netbios
         Get-ChildItem $Netbios |
         foreach {
-        New-ItemProperty -Path $Netbios -Name NetbiosOptions -Value '2' -PropertyType DWORD -Force | Out-Null
+        New-ItemProperty -Path "$Netbios\$($_.pschildname)" -Name NetbiosOptions -Value '2' -PropertyType DWORD -Force | Out-Null
         }
 }
