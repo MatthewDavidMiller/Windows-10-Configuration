@@ -24,6 +24,7 @@ function InteractiveMenu1 {
         Write-Host "6: Press '6' to remove some default applications."
         Write-Host "7: Press '7' to disable LLMNR."
         Write-Host "8: Press '8' to disable Netbios."
+        Write-Host "9: Press '9' to disable SMB version 1."
         Write-Host "q: Press 'q' to quit."
     }
     do {
@@ -55,6 +56,9 @@ function InteractiveMenu1 {
             }
             '8' {
                 DisableNetbios
+            }
+            '9' {
+                DisableSMBV1
             }
         }
         Pause

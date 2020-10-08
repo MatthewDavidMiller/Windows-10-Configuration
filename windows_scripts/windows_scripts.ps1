@@ -1636,7 +1636,7 @@ function DisableLLMNR {
     function DisableLLMNR2 {
         # Set NTP server domain
         New-ItemProperty -Path $DNSClient -Name EnableMulticast -Value '0' -PropertyType DWORD -Force | Out-Null
-        }
+    }
 
     # Configure NTP parameters
     if (!(Test-Path $DNSClient)) {
@@ -1650,12 +1650,17 @@ function DisableLLMNR {
 
 # Refer to http://blog.dbsnet.fr/disable-netbios-with-powershell
 function DisableNetbios {
- # Interfaces registry folder
+    # Interfaces registry folder
     $Netbios = "Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\services\NetBT\Parameters\Interfaces"
 
     # Disable Netbios
-        Get-ChildItem $Netbios |
-        foreach {
+    Get-ChildItem $Netbios |
+    ForEach-Object {
         New-ItemProperty -Path "$Netbios\$($_.pschildname)" -Name NetbiosOptions -Value '2' -PropertyType DWORD -Force | Out-Null
-        }
+    }
+}
+
+# Refer to https://docs.microsoft.com/en-us/windows-server/storage/file-server/troubleshoot/detect-enable-and-disable-smbv1-v2-v3
+function DisableSMBV1 {
+    Disable-WindowsOptionalFeature -Online -FeatureName smb1protocol
 }
