@@ -1571,12 +1571,10 @@ function RemoveFeatures {
 function MapDrives {
     # Network Share locations
     $Share1 = '\\matt-nas.miller.lan\matt_files'
-    $Share2 = '\\matt-nas.miller.lan\matthew_versions'
-    $Share3 = '\\matt-nas.miller.lan\vm_backup'
+	
     # Mount Network Shares
     New-SmbMapping -LocalPath 'N:' -RemotePath "$Share1" -Persistent $True
-    New-SmbMapping -LocalPath 'O:' -RemotePath "$Share2" -Persistent $True
-    New-SmbMapping -LocalPath 'P:' -RemotePath "$Share3" -Persistent $True
+	
     # Resarter explorer
     taskkill /IM "explorer.exe" /F
     Start-Process "explorer.exe"
