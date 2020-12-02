@@ -3,10 +3,29 @@
 # Script to confgure settings in Windows 10
 
 # Get neeeded files
-Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/windows_scripts.ps1' -OutFile "$PSScriptRoot\windows_scripts.ps1"
+Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/functions.ps1' -OutFile "$PSScriptRoot\functions\functions.ps1"
+Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/configure_app_privacy.ps1' -OutFile "$PSScriptRoot\functions\configure_app_privacy.ps1"
+Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/configure_firewall.ps1' -OutFile "$PSScriptRoot\functions\configure_firewall.ps1"
+Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/configure_ntp.ps1' -OutFile "$PSScriptRoot\functions\configure_ntp.ps1"
+Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/disable_cortana.ps1' -OutFile "$PSScriptRoot\functions\disable_cortana.ps1"
+Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/disable_telemetry.ps1' -OutFile "$PSScriptRoot\functions\disable_telemetry.ps1"
+Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/enable_controlled_folder_access.ps1' -OutFile "$PSScriptRoot\functions\enable_controlled_folder_access.ps1"
+Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/install_applications.ps1' -OutFile "$PSScriptRoot\functions\install_applications.ps1"
+Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/remove_default_apps.ps1' -OutFile "$PSScriptRoot\functions\remove_default_apps.ps1"
+
 
 # Source Functions
-. "$PSScriptRoot\windows_scripts.ps1"
+. "$PSScriptRoot\functions\functions.ps1"
+. "$PSScriptRoot\functions\configure_app_privacy.ps1"
+. "$PSScriptRoot\functions\configure_firewall.ps1"
+. "$PSScriptRoot\functions\configure_ntp.ps1"
+. "$PSScriptRoot\functions\disable_cortana.ps1"
+. "$PSScriptRoot\functions\disable_telemetry.ps1"
+. "$PSScriptRoot\functions\enable_controlled_folder_access.ps1"
+. "$PSScriptRoot\functions\install_applications.ps1"
+. "$PSScriptRoot\functions\remove_default_apps.ps1"
+
+
 
 function InteractiveMenu1 {
     function Show-Menu {

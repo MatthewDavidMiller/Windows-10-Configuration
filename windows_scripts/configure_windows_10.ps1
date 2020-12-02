@@ -3,10 +3,10 @@
 # Script to confgure settings in Windows 10
 
 # Get neeeded files
-Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/windows_scripts.ps1' -OutFile "$PSScriptRoot\windows_scripts.ps1"
+Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/functions.ps1' -OutFile "$PSScriptRoot\functions\functions.ps1"
 
 # Source Functions
-. "$PSScriptRoot\windows_scripts.ps1"
+. "$PSScriptRoot\functions\functions.ps1"
 
 function InteractiveMenu1 {
     function Show-Menu {
