@@ -1,6 +1,7 @@
 # Copyright (c) Matthew David Miller. All rights reserved.
 # Licensed under the MIT License.
 # Script to confgure settings in Windows 10
+# Credits to Ed O'Connor, https://powershell.org/forums/topic/envuserprofile-as-administrator-shell/
 
 # Get neeeded files
 Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/functions.ps1' -OutFile "$PSScriptRoot\functions\functions.ps1"
