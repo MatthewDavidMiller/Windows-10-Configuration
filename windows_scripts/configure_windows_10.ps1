@@ -4,14 +4,16 @@
 
 # Get neeeded files
 Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/functions.ps1' -OutFile "$PSScriptRoot\functions\functions.ps1"
+Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/env_example.ps1' -OutFile "$PSScriptRoot\functions\env_example.ps1"
 
 # Source Functions
+. "$PSScriptRoot\functions\env.ps1"
 . "$PSScriptRoot\functions\functions.ps1"
 
-function InteractiveMenu1 {
+function InteractiveMenu {
     function Show-Menu {
         param (
-            [string]$Title = 'Configuration Options 1'
+            [string]$Title = 'Configuration Options'
         )
         Clear-Host
         Write-Host "================ $Title ================"
@@ -33,4 +35,4 @@ function InteractiveMenu1 {
 }
 
 # Call functions
-InteractiveMenu1
+InteractiveMenu

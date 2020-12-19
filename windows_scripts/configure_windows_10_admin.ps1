@@ -12,9 +12,10 @@ Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-
 Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/enable_controlled_folder_access.ps1' -OutFile "$PSScriptRoot\functions\enable_controlled_folder_access.ps1"
 Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/install_applications.ps1' -OutFile "$PSScriptRoot\functions\install_applications.ps1"
 Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/remove_default_apps.ps1' -OutFile "$PSScriptRoot\functions\remove_default_apps.ps1"
-
+Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/env_example.ps1' -OutFile "$PSScriptRoot\functions\env_example.ps1"
 
 # Source Functions
+. "$PSScriptRoot\functions\env.ps1"
 . "$PSScriptRoot\functions\functions.ps1"
 . "$PSScriptRoot\functions\configure_app_privacy.ps1"
 . "$PSScriptRoot\functions\configure_firewall.ps1"
@@ -25,12 +26,10 @@ Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-
 . "$PSScriptRoot\functions\install_applications.ps1"
 . "$PSScriptRoot\functions\remove_default_apps.ps1"
 
-
-
-function InteractiveMenu1 {
+function InteractiveMenu {
     function Show-Menu {
         param (
-            [string]$Title = 'Configuration Options 1'
+            [string]$Title = 'Configuration Options'
         )
         Clear-Host
         Write-Host "================ $Title ================"
@@ -44,6 +43,12 @@ function InteractiveMenu1 {
         Write-Host "7: Press '7' to disable LLMNR."
         Write-Host "8: Press '8' to disable Netbios."
         Write-Host "9: Press '9' to disable SMB version 1."
+        Write-Host "10: Press '10' to configure app privacy settings."
+        Write-Host "11: Press '11' to configure NTP."
+        Write-Host "12: Press '12' to install features."
+        Write-Host "13: Press '13' to remove some default features."
+        Write-Host "14: Press '14' to install applications."
+        Write-Host "15: Press '15' to enable controlled folder access."
         Write-Host "q: Press 'q' to quit."
     }
     do {
@@ -79,48 +84,22 @@ function InteractiveMenu1 {
             '9' {
                 DisableSMBV1
             }
-        }
-        Pause
-    }
-    until ($selection -eq 'q')
-}
-
-function InteractiveMenu2 {
-    function Show-Menu {
-        param (
-            [string]$Title = 'Configuration Options 2'
-        )
-        Clear-Host
-        Write-Host "================ $Title ================"
-
-        Write-Host "1: Press '1' to configure app privacy settings."
-        Write-Host "2: Press '2' to configure NTP."
-        Write-Host "3: Press '3' to install features."
-        Write-Host "4: Press '4' to remove some default features."
-        Write-Host "5: Press '5' to install applications."
-        Write-Host "6: Press '6' to enable controlled folder access."
-        Write-Host "q: Press 'q' to quit."
-    }
-    do {
-        Show-Menu
-        $selection = Read-Host "Select an option"
-        switch ($selection) {
-            '1' {
+            '10' {
                 ConfigureAppPrivacy
             }
-            '2' {
+            '11' {
                 ConfigureNTP
             }
-            '3' {
+            '12' {
                 InstallFeatures
             }
-            '4' {
+            '13' {
                 RemoveFeatures
             }
-            '5' {
+            '14' {
                 InstallApplications
             }
-            '6' {
+            '15' {
                 EnableControlledFolderAccess
             }
         }
@@ -130,5 +109,4 @@ function InteractiveMenu2 {
 }
 
 # Call Functions
-InteractiveMenu1
-InteractiveMenu2
+InteractiveMenu

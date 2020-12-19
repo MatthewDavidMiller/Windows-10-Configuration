@@ -47,9 +47,6 @@ function RemoveFeatures {
 }
 
 function MapDrives {
-    # Network Share locations
-    $Share1 = '\\matt-nas.miller.lan\matt_files'
-
     # Mount Network Shares
     New-SmbMapping -LocalPath 'N:' -RemotePath "$Share1" -Persistent $True
 
