@@ -817,7 +817,7 @@ function InstallApplications {
         $SplitLoggedInUser = $GetLoggedInUser.username
         $LoggedInUser = $SplitLoggedInUser.Split("\")
         $Username = $LoggedInUser[1]
-        $UserPath = "C:\Users\$Username"
+        $global:UserPath = "C:\Users\$Username"
     }
 
     # To Update all installed choclatey packages use command:
