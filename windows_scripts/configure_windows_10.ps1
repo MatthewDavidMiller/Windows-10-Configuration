@@ -2,6 +2,11 @@
 # Licensed under the MIT License.
 # Script to confgure settings in Windows 10
 
+# Create directory for scripts
+if (-not (Test-Path "$PSScriptRoot\functions")) {
+    New-Item -Path "$PSScriptRoot" -Name "functions" -ItemType "Directory"
+}
+
 # Get neeeded files
 Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/functions.ps1' -OutFile "$PSScriptRoot\functions\functions.ps1"
 Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/env_example.ps1' -OutFile "$PSScriptRoot\functions\env_example.ps1"

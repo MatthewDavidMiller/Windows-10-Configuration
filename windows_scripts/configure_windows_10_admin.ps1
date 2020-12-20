@@ -2,6 +2,12 @@
 # Licensed under the MIT License.
 # Script to confgure settings in Windows 10
 # Credits to Ed O'Connor, https://powershell.org/forums/topic/envuserprofile-as-administrator-shell/
+# Credits to Martin Brandl, https://stackoverflow.com/questions/50366229/powershell-test-path-output-eq-false-not-working
+
+# Create directory for scripts
+if (-not (Test-Path "$PSScriptRoot\functions")) {
+    New-Item -Path "$PSScriptRoot" -Name "functions" -ItemType "Directory"
+}
 
 # Get neeeded files
 Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/functions.ps1' -OutFile "$PSScriptRoot\functions\functions.ps1"
