@@ -20,6 +20,7 @@ Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-
 Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/install_applications.ps1' -OutFile "$PSScriptRoot\functions\install_applications.ps1"
 Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/remove_default_apps.ps1' -OutFile "$PSScriptRoot\functions\remove_default_apps.ps1"
 Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/env_example.ps1' -OutFile "$PSScriptRoot\functions\env_example.ps1"
+Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/configure_user.ps1' -OutFile "$PSScriptRoot\functions\configure_user.ps1"
 
 # Source Functions
 . "$PSScriptRoot\functions\env.ps1"
@@ -32,6 +33,7 @@ Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-
 . "$PSScriptRoot\functions\enable_controlled_folder_access.ps1"
 . "$PSScriptRoot\functions\install_applications.ps1"
 . "$PSScriptRoot\functions\remove_default_apps.ps1"
+. "$PSScriptRoot\functions\configure_user.ps1"
 
 function InteractiveMenu {
     function Show-Menu {
@@ -56,6 +58,8 @@ function InteractiveMenu {
         Write-Host "13: Press '13' to remove some default features."
         Write-Host "14: Press '14' to install applications."
         Write-Host "15: Press '15' to enable controlled folder access."
+        Write-Host "16: Press '16' to create an user."
+        Write-Host "17: Press '17' to add an user to local admin group."
         Write-Host "q: Press 'q' to quit."
     }
     do {
@@ -108,6 +112,12 @@ function InteractiveMenu {
             }
             '15' {
                 EnableControlledFolderAccess
+            }
+            '16' {
+                CreateUser
+            }
+            '17' {
+                AddUserToLocalAdmin
             }
         }
         Pause
