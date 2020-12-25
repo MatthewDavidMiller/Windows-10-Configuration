@@ -8,58 +8,55 @@ function InstallApplications {
             Clear-Host
             Write-Host "================ $Title ================"
 
-            Write-Host "1: Press '1' to Install Chocolatey."
-            Write-Host "2: Press '2' to Install ShellCheck."
-            Write-Host "3: Press '3' to Install Notepad++."
-            Write-Host "4: Press '4' to Install 7Zip."
-            Write-Host "5: Press '5' to Install Nmap."
-            Write-Host "6: Press '6' to Install QBittorent."
-            Write-Host "7: Press '7' to Install Rufus."
-            Write-Host "8: Press '8' to Install Etcher."
-            Write-Host "9: Press '9' to Install Gimp."
-            Write-Host "10: Press '10' to Install Git."
-            Write-Host "11: Press '11' to Install Vlc."
-            Write-Host "12: Press '12' to Install Blender."
-            Write-Host "13: Press '13' to Install Bitwarden."
-            Write-Host "14: Press '14' to Install WinSCP."
-            Write-Host "15: Press '15' to Install Putty."
-            Write-Host "16: Press '16' to Install Python."
-            Write-Host "17: Press '17' to Install Libreoffice."
-            Write-Host "18: Press '18' to Install Java."
-            Write-Host "19: Press '19' to Install Sysinternals."
-            Write-Host "20: Press '20' to Install VSCode."
-            Write-Host "21: Press '21' to Install Wireshark."
-            Write-Host "22: Press '22' to Install OpenJDK."
-            Write-Host "23: Press '23' to Install Tiny Nvidia Updater."
-            Write-Host "24: Press '24' to Install Firefox."
-            Write-Host "25: Press '25' to Install Chrome."
-            Write-Host "26: Press '26' to Install Edge."
-            Write-Host "27: Press '27' to Install Freefilesync."
-            Write-Host "28: Press '28' to Install Vmware Player."
-            Write-Host "29: Press '29' to Install Nvidia Profile Inspector."
-            Write-Host "30: Press '30' to Install Steam."
-            Write-Host "31: Press '31' to Install Origin."
-            Write-Host "32: Press '32' to Install GOG."
-            Write-Host "33: Press '33' to Install Epic Store."
-            Write-Host "35: Press '34' to Install Bethesda Launcher."
-            Write-Host "36: Press '35' to Install Borderless Gaming."
-            Write-Host "37: Press '36' to Install Discord."
-            Write-Host "38: Press '37' to Install Fedora Media Writer."
-            Write-Host "39: Press '38' to Install Visual Studio Community."
-            Write-Host "40: Press '39' to Install OpenVPN."
-            Write-Host "41: Press '40' to Install Twitch."
-            Write-Host "42: Press '41' to Install Vortex."
-            Write-Host "43: Press '42' to Install Visual Redistributables."
-            Write-Host "44: Press '43' to Install Rockstar Launcher."
-            Write-Host "45: Press '44' to Install Rpgmaker RTP."
-            Write-Host "46: Press '45' to Install Golang."
-            Write-Host "47: Press '46' to Install Reolink."
-            Write-Host "48: Press '47' to Install Uplay."
-            Write-Host "49: Press '48' to Install Microsoft Office."
-            Write-Host "50: Press '49' to Install Locale Emulator."
-            Write-Host "51: Press '50' to Install Wireguard."
-            Write-Host "52: Press '51' to Install Windows Store Apps."
-            Write-Host "53: Press '52' to Install Zoom Meetings."
+            Write-Host "1: Press '1' to Install Notepad++."
+            Write-Host "2: Press '2' to Install 7Zip."
+            Write-Host "3: Press '3' to Install Nmap."
+            Write-Host "4: Press '4' to Install QBittorent."
+            Write-Host "5: Press '5' to Install Rufus."
+            Write-Host "6: Press '6' to Install Etcher."
+            Write-Host "7: Press '7' to Install Gimp."
+            Write-Host "8: Press '8' to Install Git."
+            Write-Host "9: Press '9' to Install Vlc."
+            Write-Host "10: Press '10' to Install Blender."
+            Write-Host "11: Press '11' to Install Bitwarden."
+            Write-Host "12: Press '12' to Install WinSCP."
+            Write-Host "13: Press '13' to Install Putty."
+            Write-Host "14: Press '14' to Install Libreoffice."
+            Write-Host "15: Press '15' to Install Java."
+            Write-Host "16: Press '16' to Install Sysinternals."
+            Write-Host "17: Press '17' to Install VSCode."
+            Write-Host "18: Press '18' to Install Wireshark."
+            Write-Host "19: Press '19' to Install OpenJDK."
+            Write-Host "20: Press '20' to Install Tiny Nvidia Updater."
+            Write-Host "21: Press '21' to Install Firefox."
+            Write-Host "22: Press '22' to Install Chrome."
+            Write-Host "23: Press '23' to Install Edge."
+            Write-Host "24: Press '24' to Install Freefilesync."
+            Write-Host "25: Press '25' to Install Vmware Player."
+            Write-Host "26: Press '26' to Install Nvidia Profile Inspector."
+            Write-Host "27: Press '27' to Install Steam."
+            Write-Host "28: Press '28' to Install Origin."
+            Write-Host "29: Press '29' to Install GOG."
+            Write-Host "30: Press '30' to Install Epic Store."
+            Write-Host "31: Press '31' to Install Bethesda Launcher."
+            Write-Host "32: Press '32' to Install Borderless Gaming."
+            Write-Host "33: Press '33' to Install Discord."
+            Write-Host "34: Press '34' to Install Fedora Media Writer."
+            Write-Host "35: Press '35' to Install Visual Studio Community."
+            Write-Host "36: Press '36' to Install OpenVPN."
+            Write-Host "37: Press '37' to Install Twitch."
+            Write-Host "38: Press '38' to Install Vortex."
+            Write-Host "39: Press '39' to Install Visual Redistributables."
+            Write-Host "40: Press '40' to Install Rockstar Launcher."
+            Write-Host "41: Press '41' to Install Rpgmaker RTP."
+            Write-Host "42: Press '42' to Install Golang."
+            Write-Host "43: Press '43' to Install Reolink."
+            Write-Host "44: Press '44' to Install Uplay."
+            Write-Host "45: Press '45' to Install Microsoft Office."
+            Write-Host "46: Press '46' to Install Locale Emulator."
+            Write-Host "47: Press '47' to Install Wireguard."
+            Write-Host "48: Press '48' to Install Windows Store Apps."
+            Write-Host "49: Press '49' to Install Zoom Meetings."
             Write-Host "q: Press 'q' to quit."
         }
         do {
@@ -67,175 +64,156 @@ function InstallApplications {
             $selection = Read-Host "Select an option"
             switch ($selection) {
                 '1' {
-                    InstallChocolatey
-                }
-                '2' {
-                    InstallShellCheck
-                }
-                '3' {
                     InstallNotepadPlusPlus
                 }
-                '4' {
+                '2' {
                     Install7Zip
                 }
-                '5' {
+                '3' {
                     InstallNMap
                 }
-                '6' {
+                '4' {
                     InstallQBittorent
                 }
-                '7' {
+                '5' {
                     InstallRufus
                 }
-                '8' {
+                '6' {
                     InstallEtcher
                 }
-                '9' {
+                '7' {
                     InstallGimp
                 }
-                '10' {
+                '8' {
                     InstallGit
                 }
-                '11' {
+                '9' {
                     InstallVlc
                 }
-                '12' {
+                '10' {
                     InstallBlender
                 }
-                '13' {
+                '11' {
                     InstallBitwarden
                 }
-                '14' {
+                '12' {
                     InstallWinSCP
                 }
-                '15' {
+                '13' {
                     InstallPutty
                 }
-                '16' {
-                    InstallPython
-                }
-                '17' {
+                '14' {
                     InstallLibreoffice
                 }
-                '18' {
+                '15' {
                     InstallJava
                 }
-                '19' {
+                '16' {
                     InstallSysinternals
                 }
-                '20' {
+                '17' {
                     InstallVSCode
                 }
-                '21' {
+                '18' {
                     InstallWireshark
                 }
-                '22' {
+                '19' {
                     InstallOpenJDK
                 }
-                '23' {
+                '20' {
                     InstallTinyNvidiaUpdater
                 }
-                '24' {
+                '21' {
                     InstallFirefox
                 }
-                '25' {
+                '22' {
                     InstallChrome
                 }
-                '26' {
+                '23' {
                     InstallEdge
                 }
-                '27' {
+                '24' {
                     InstallFreeFileSync
                 }
-                '28' {
+                '25' {
                     InstallVmwarePlayer
                 }
-                '29' {
+                '26' {
                     InstallNvidiaProfileInspector
                 }
-                '30' {
+                '27' {
                     InstallSteam
                 }
-                '31' {
+                '28' {
                     InstallOrigin
                 }
-                '32' {
+                '29' {
                     InstallGOG
                 }
-                '33' {
+                '30' {
                     InstallEpicStore
                 }
-                '34' {
+                '31' {
                     InstallBethesdaLauncher
                 }
-                '35' {
+                '32' {
                     InstallBorderlessGaming
                 }
-                '36' {
+                '33' {
                     InstallDiscord
                 }
-                '37' {
+                '34' {
                     InstallFedoraMediaWriter
                 }
-                '38' {
+                '35' {
                     InstallVisualStudioCommunity
                 }
-                '39' {
+                '36' {
                     InstallOpenVPN
                 }
-                '40' {
+                '37' {
                     InstallTwitch
                 }
-                '41' {
+                '38' {
                     InstallVortex
                 }
-                '42' {
+                '39' {
                     InstallVisualRedistributables
                 }
-                '43' {
+                '40' {
                     InstallRockstarLauncher
                 }
-                '44' {
+                '41' {
                     InstallRPGMakerRTPs
                 }
-                '45' {
+                '42' {
                     InstallGolang
                 }
-                '46' {
+                '43' {
                     InstallReolink
                 }
-                '47' {
+                '44' {
                     InstallUplay
                 }
-                '48' {
+                '45' {
                     InstallMicrosoftOffice
                 }
-                '49' {
+                '46' {
                     InstallLocaleEmulator
                 }
-                '50' {
+                '47' {
                     InstallWireguard
                 }
-                '51' {
+                '48' {
                     InstallWindowsStoreApps
                 }
-                '52' {
+                '49' {
                     InstallZoom
                 }
             }
             Pause
         }
         until ($selection -eq 'q')
-    }
-
-    function InstallChocolatey {
-        Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-        # Reload PATH
-        $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
-    }
-
-    function InstallShellCheck {
-        choco 'install' 'shellcheck' '-y'
     }
 
     function InstallNotepadPlusPlus {
@@ -284,13 +262,13 @@ function InstallApplications {
         Start-Process 'https://rufus.ie/'
         Read-Host 'Press enter when downloads are complete '
         Get-ChildItem "$UserPath\Downloads\rufus*.exe" | Rename-Item -NewName 'rufus.exe'
-        New-Item -ItemType Directory -Force -Path 'C:\Program Files\Rufus'
-        Move-Item -Path "$UserPath\Downloads\rufus.exe" -Destination 'C:\Program Files\Rufus\rufus.exe'
+        New-Item -ItemType Directory -Force -Path "$UserPath\AppData\Local\Programs\Rufus"
+        Move-Item -Path "$UserPath\Downloads\rufus.exe" -Destination "$UserPath\AppData\Local\Programs\Rufus\rufus.exe"
         # Create shortcut
         $WScriptShell = New-Object -ComObject WScript.Shell
-        $Shortcut = $WScriptShell.CreateShortcut('C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Rufus.lnk')
-        $Shortcut.WorkingDirectory = 'C:\Program Files\Rufus'
-        $Shortcut.TargetPath = 'C:\Program Files\Rufus\rufus.exe'
+        $Shortcut = $WScriptShell.CreateShortcut("$UserPath\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Rufus.lnk")
+        $Shortcut.WorkingDirectory = "$UserPath\AppData\Local\Programs\Rufus"
+        $Shortcut.TargetPath = "$UserPath\AppData\Local\Programs\Rufus\rufus.exe"
         $Shortcut.Save()
     }
 
@@ -390,26 +368,6 @@ function InstallApplications {
         }
     }
 
-    function InstallPython {
-        Read-Host 'A web browser will be opened.  Download python into the downloads folder. Press enter to begin '
-        Start-Process 'https://www.python.org/downloads/windows/'
-        Read-Host 'Press enter when downloads are complete '
-        if (Get-AuthenticodeSignature -FilePath "$UserPath\Downloads\python*.exe" | Where-Object { $_.Status -eq "Valid" }) {
-            Start-Process -FilePath "$UserPath\Downloads\python*.exe" -Wait
-            # Reload PATH
-            $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
-
-            # Configure Python
-            # Update pip
-            python -m pip install -U pip
-            # Install pylint
-            pip install pylint
-        }
-        else {
-            Read-Host "Signature is not valid, application will not be installed"
-        }
-    }
-
     function InstallLibreoffice {
         Read-Host 'A web browser will be opened.  Download libreoffice fresh into the downloads folder. Press enter to begin '
         Start-Process 'https://www.libreoffice.org/download/download/'
@@ -437,12 +395,12 @@ function InstallApplications {
     function InstallSysinternals {
         Invoke-WebRequest 'https://download.sysinternals.com/files/SysinternalsSuite.zip' -OutFile "$UserPath\Downloads\SysinternalsSuite.zip"
         # Extract zip folder
-        Expand-Archive -LiteralPath "$UserPath\Downloads\SysinternalsSuite.zip" -DestinationPath 'C:\Program Files\SysinternalsSuite'
+        Expand-Archive -LiteralPath "$UserPath\Downloads\SysinternalsSuite.zip" -DestinationPath "$UserPath\AppData\Local\Programs\SysinternalsSuite"
         # Create shortcut
         $WScriptShell = New-Object -ComObject WScript.Shell
-        $Shortcut = $WScriptShell.CreateShortcut('C:\ProgramData\Microsoft\Windows\Start Menu\Programs\SysinternalsSuite.lnk')
-        $Shortcut.WorkingDirectory = 'C:\Program Files\SysinternalsSuite'
-        $Shortcut.TargetPath = 'C:\Program Files\SysinternalsSuite'
+        $Shortcut = $WScriptShell.CreateShortcut("$UserPath\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\SysinternalsSuite.lnk")
+        $Shortcut.WorkingDirectory = "$UserPath\AppData\Local\Programs\SysinternalsSuite"
+        $Shortcut.TargetPath = "$UserPath\AppData\Local\Programs\SysinternalsSuite"
         $Shortcut.Save()
     }
 
@@ -485,14 +443,14 @@ function InstallApplications {
         Start-Process 'https://github.com/ElPumpo/TinyNvidiaUpdateChecker/releases'
         Read-Host 'Press enter when downloads are complete '
         Get-ChildItem "$UserPath\Downloads\TinyNvidiaUpdateChecker*.exe" | Rename-Item -NewName 'TinyNvidiaUpdateChecker.exe'
-        New-Item -ItemType Directory -Force -Path 'C:\Program Files\TinyNvidiaUpdateChecker'
-        Move-Item -Path "$UserPath\Downloads\TinyNvidiaUpdateChecker.exe" -Destination 'C:\Program Files\TinyNvidiaUpdateChecker\TinyNvidiaUpdateChecker.exe'
-        Move-Item -Path "$UserPath\Downloads\HtmlAgilityPack.dll" -Destination 'C:\Program Files\TinyNvidiaUpdateChecker\HtmlAgilityPack.dll'
+        New-Item -ItemType Directory -Force -Path "$UserPath\AppData\Local\Programs\TinyNvidiaUpdateChecker"
+        Move-Item -Path "$UserPath\Downloads\TinyNvidiaUpdateChecker.exe" -Destination "$UserPath\AppData\Local\Programs\TinyNvidiaUpdateChecker\TinyNvidiaUpdateChecker.exe"
+        Move-Item -Path "$UserPath\Downloads\HtmlAgilityPack.dll" -Destination "$UserPath\AppData\Local\Programs\TinyNvidiaUpdateChecker\HtmlAgilityPack.dll"
         # Create shortcut
         $WScriptShell = New-Object -ComObject WScript.Shell
-        $Shortcut = $WScriptShell.CreateShortcut('C:\ProgramData\Microsoft\Windows\Start Menu\Programs\TinyNvidiaUpdateChecker.lnk')
-        $Shortcut.WorkingDirectory = 'C:\Program Files\TinyNvidiaUpdateChecker'
-        $Shortcut.TargetPath = 'C:\Program Files\TinyNvidiaUpdateChecker\TinyNvidiaUpdateChecker.exe'
+        $Shortcut = $WScriptShell.CreateShortcut("$UserPath\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\TinyNvidiaUpdateChecker.lnk")
+        $Shortcut.WorkingDirectory = "$UserPath\AppData\Local\Programs\TinyNvidiaUpdateChecker"
+        $Shortcut.TargetPath = "$UserPath\AppData\Local\Programs\TinyNvidiaUpdateChecker\TinyNvidiaUpdateChecker.exe"
         $Shortcut.Save()
     }
 
@@ -543,12 +501,12 @@ function InstallApplications {
         Start-Process 'https://github.com/Orbmu2k/nvidiaProfileInspector/releases'
         Read-Host 'Press enter when downloads are complete '
         # Extract zip folder
-        Expand-Archive -LiteralPath "$UserPath\Downloads\nvidiaProfileInspector.zip" -DestinationPath 'C:\Program Files\NvidiaProfileInspector'
+        Expand-Archive -LiteralPath "$UserPath\Downloads\nvidiaProfileInspector.zip" -DestinationPath "$UserPath\AppData\Local\Programs\NvidiaProfileInspector"
         # Create shortcut
         $WScriptShell = New-Object -ComObject WScript.Shell
-        $Shortcut = $WScriptShell.CreateShortcut('C:\ProgramData\Microsoft\Windows\Start Menu\Programs\NvidiaProfileInspector.lnk')
-        $Shortcut.WorkingDirectory = 'C:\Program Files\NvidiaProfileInspector'
-        $Shortcut.TargetPath = 'C:\Program Files\NvidiaProfileInspector\nvidiaProfileInspector.exe'
+        $Shortcut = $WScriptShell.CreateShortcut("$UserPath\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\NvidiaProfileInspector.lnk")
+        $Shortcut.WorkingDirectory = "$UserPath\AppData\Local\Programs\NvidiaProfileInspector"
+        $Shortcut.TargetPath = "$UserPath\AppData\Local\Programs\NvidiaProfileInspector\nvidiaProfileInspector.exe"
         $Shortcut.Save()
     }
 
