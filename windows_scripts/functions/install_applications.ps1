@@ -752,8 +752,8 @@ function InstallApplications {
         Read-Host 'A web browser will be opened.  Download the uplay binary into the downloads folder. Press enter to begin '
         Start-Process 'https://uplay.ubisoft.com/'
         Read-Host 'Press enter when downloads are complete '
-        if (Get-AuthenticodeSignature -FilePath "$UserPath\Downloads\UplayInstaller.exe" | Where-Object { $_.Status -eq "Valid" }) {
-            Start-Process -FilePath "$UserPath\Downloads\UplayInstaller.exe" -Wait
+        if (Get-AuthenticodeSignature -FilePath "$UserPath\Downloads\UbisoftConnectInstaller.exe" | Where-Object { $_.Status -eq "Valid" }) {
+            Start-Process -FilePath "$UserPath\Downloads\UbisoftConnectInstaller.exe" -Wait
         }
         else {
             Read-Host "Signature is not valid, application will not be installed"

@@ -2,19 +2,6 @@
 # Licensed under the MIT License.
 # Script to confgure settings in Windows 10
 
-# Create directory for scripts
-if (-not (Test-Path "$PSScriptRoot\functions")) {
-    New-Item -Path "$PSScriptRoot" -Name "functions" -ItemType "Directory"
-}
-
-# Get neeeded files
-Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/functions.ps1' -OutFile "$PSScriptRoot\functions\functions.ps1"
-Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/env_example.ps1' -OutFile "$PSScriptRoot\functions\env_example.ps1"
-
-# Source Functions
-. "$PSScriptRoot\functions\env.ps1"
-. "$PSScriptRoot\functions\functions.ps1"
-
 function InteractiveMenu {
     function Show-Menu {
         param (
@@ -24,6 +11,7 @@ function InteractiveMenu {
         Write-Host "================ $Title ================"
 
         Write-Host "1: Press '1' to map network drives."
+        Write-Host "14: Press '2' to install applications."
         Write-Host "q: Press 'q' to quit."
     }
     do {
@@ -32,6 +20,9 @@ function InteractiveMenu {
         switch ($selection) {
             '1' {
                 MapDrives
+            }
+            '2' {
+                InstallApplications
             }
         }
         Pause
