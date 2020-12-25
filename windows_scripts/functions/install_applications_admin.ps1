@@ -62,19 +62,18 @@ function InstallApplicationsAdmin {
         }
     }
 
+    function GetUserPath {
+        $GetLoggedInUser = Get-WmiObject -Class Win32_ComputerSystem | Select-Object username
+        $SplitLoggedInUser = $GetLoggedInUser.username
+        $LoggedInUser = $SplitLoggedInUser.Split("\")
+        $Username = $LoggedInUser[1]
+        $global:UserPath = "C:\Users\$Username"
+    }
+
+    # To Update all installed choclatey packages use command:
+    # choco upgrade all
+
+    # Call functions
+    GetUserPath
+    ApplicationsMenu
 }
-
-function GetUserPath {
-    $GetLoggedInUser = Get-WmiObject -Class Win32_ComputerSystem | Select-Object username
-    $SplitLoggedInUser = $GetLoggedInUser.username
-    $LoggedInUser = $SplitLoggedInUser.Split("\")
-    $Username = $LoggedInUser[1]
-    $global:UserPath = "C:\Users\$Username"
-}
-
-# To Update all installed choclatey packages use command:
-# choco upgrade all
-
-# Call functions
-GetUserPath
-ApplicationsMenu
