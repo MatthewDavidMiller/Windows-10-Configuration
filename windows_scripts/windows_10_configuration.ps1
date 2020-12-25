@@ -20,7 +20,7 @@ Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-
 Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/install_applications_admin.ps1' -OutFile "$PSScriptRoot\functions\install_applications_admin.ps1"
 Invoke-WebRequest 'https://raw.githubusercontent.com/MatthewDavidMiller/Windows-10-Configuration/stable/windows_scripts/functions/windows_10_uac.ps1' -OutFile "$PSScriptRoot\functions\windows_10_uac.ps1"
 
-if (-not (Test-Path "$PSScriptRoot\env.ps1")) {
+if (-not (Test-Path "$PSScriptRoot\functions\env.ps1")) {
     Read-Host 'Variables stored in env.ps1 is not setup, create an env.ps1 file in the functions folder. An example is in the functions folder. '
     exit
 }
