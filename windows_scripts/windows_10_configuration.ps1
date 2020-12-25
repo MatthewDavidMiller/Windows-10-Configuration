@@ -25,19 +25,5 @@ if (-not (Test-Path "$PSScriptRoot\functions\env.ps1")) {
     exit
 }
 
-# Source Functions
-. "$PSScriptRoot\functions\env.ps1"
-. "$PSScriptRoot\functions\functions.ps1"
-. "$PSScriptRoot\functions\configure_app_privacy.ps1"
-. "$PSScriptRoot\functions\configure_firewall.ps1"
-. "$PSScriptRoot\functions\configure_ntp.ps1"
-. "$PSScriptRoot\functions\disable_cortana.ps1"
-. "$PSScriptRoot\functions\disable_telemetry.ps1"
-. "$PSScriptRoot\functions\enable_controlled_folder_access.ps1"
-. "$PSScriptRoot\functions\install_applications.ps1"
-. "$PSScriptRoot\functions\install_applications_admin.ps1"
-. "$PSScriptRoot\functions\remove_default_apps.ps1"
-. "$PSScriptRoot\functions\configure_user.ps1"
-
 # Start scripts
 . "$PSScriptRoot\functions\windows_10_uac.ps1"

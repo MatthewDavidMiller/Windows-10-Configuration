@@ -4,6 +4,20 @@
 # Credits to Ed O'Connor, https://powershell.org/forums/topic/envuserprofile-as-administrator-shell/
 # Credits to Martin Brandl, https://stackoverflow.com/questions/50366229/powershell-test-path-output-eq-false-not-working
 
+# Source Functions
+. "$PSScriptRoot\env.ps1"
+. "$PSScriptRoot\functions.ps1"
+. "$PSScriptRoot\configure_app_privacy.ps1"
+. "$PSScriptRoot\configure_firewall.ps1"
+. "$PSScriptRoot\configure_ntp.ps1"
+. "$PSScriptRoot\disable_cortana.ps1"
+. "$PSScriptRoot\disable_telemetry.ps1"
+. "$PSScriptRoot\enable_controlled_folder_access.ps1"
+. "$PSScriptRoot\install_applications.ps1"
+. "$PSScriptRoot\install_applications_admin.ps1"
+. "$PSScriptRoot\remove_default_apps.ps1"
+. "$PSScriptRoot\configure_user.ps1"
+
 function InteractiveMenu {
     function Show-Menu {
         param (
