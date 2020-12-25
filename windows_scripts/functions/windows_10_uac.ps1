@@ -15,10 +15,10 @@ function InteractiveMenu {
         $selection = Read-Host "Select an option"
         switch ($selection) {
             '1' {
-                . "$PSScriptRoot\configure_windows_10.ps1"
+                . "$PSScriptRoot\configure_windows_10_admin.ps1"
             }
             '2' {
-                . "$PSScriptRoot\configure_windows_10_admin.ps1"
+                . "$PSScriptRoot\configure_windows_10.ps1"
             }
         }
         Pause
