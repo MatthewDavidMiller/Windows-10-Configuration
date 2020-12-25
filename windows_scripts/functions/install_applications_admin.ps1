@@ -1,4 +1,4 @@
-function InstallApplications {
+function InstallApplicationsAdmin {
 
     function ApplicationsMenu {
         function Show-Menu {
