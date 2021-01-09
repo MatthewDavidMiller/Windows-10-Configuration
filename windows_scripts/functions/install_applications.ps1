@@ -260,14 +260,11 @@ function InstallApplications {
     }
 
     function InstallSysinternals {
-        Invoke-WebRequest 'https://download.sysinternals.com/files/SysinternalsSuite.zip' -OutFile "$UserPath\Downloads\SysinternalsSuite.zip"
-        # Extract zip folder
-        Expand-Archive -LiteralPath "$UserPath\Downloads\SysinternalsSuite.zip" -DestinationPath "$UserPath\AppData\Local\Programs\SysinternalsSuite"
         # Create shortcut
         $WScriptShell = New-Object -ComObject WScript.Shell
         $Shortcut = $WScriptShell.CreateShortcut("$UserPath\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\SysinternalsSuite.lnk")
-        $Shortcut.WorkingDirectory = "$UserPath\AppData\Local\Programs\SysinternalsSuite"
-        $Shortcut.TargetPath = "$UserPath\AppData\Local\Programs\SysinternalsSuite"
+        $Shortcut.WorkingDirectory = "\\live.sysinternals.com\tools"
+        $Shortcut.TargetPath = "\\live.sysinternals.com\tools"
         $Shortcut.Save()
     }
 
